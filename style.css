@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#parent{position: relative;}
+
+#parent img{
+    position: relativ; width: 400px; height: 400;
+}
+
+.picture{
+    width: 200px; height: 200px; margin: 0 auto;
+    background-image: url(https://img1.picmix.com/output/stamp/normal/2/7/3/5/1665372_a3607.gif);
+}
+.counter{
+    width: 20px; height: 20px; position: absolute; top: 60%; left: 50.5%; margin-top: 0 auto;
+    font-size: 70px;
+    font-family:Verdana,serif;
+}
