@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanox seine litten Subs</title>
+</head>
+<body>
+    <center><h1 style="font-size:28px">YouTube Subscribers</h1></center>
+    <center><div style="background-image: url('https://64.media.tumblr.com/72e637278bd02fba184ea7a575c12178/tumblr_otwzm1Sbb81runoqyo6_540.gifv');
+                        background-size: 50% 50%;
+                        background-position:center;
+                        background-repeat: no-repeat;
+                        background-attachment: fixed;
+                        height: 1000px;
+                        font-size:100px" 
+                        class="centered"
+                        id="subCount"></div></center>
+    
+
+    <script>
+
+    // Get Subscribers
+    const youtubeKey = '';
+    const youtubeUser = 'UCYPbIjBSyQGNbpH93WkjMJg';
+    const subCount = document.getElementById('subCount');
+    const delay = 1000; // 10 min
+
+    let getSubscribers = () => {
+
+        fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${youtubeUser}&key=${youtubeKey}`)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            console.log(data);
+            subCount.innerHTML = data["items"][0].statistics.subscriberCount;
+        })
+
+    }
+
+    setInterval(() => {
+        getSubscribers();
+    }, delay);
+
+    </script>
+</body>
+</html>
